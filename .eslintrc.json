@@ -1,0 +1,55 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "es6": true,
+    "jest": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:react-native/all"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly",
+    "__DEV__": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-native", "jsx-a11y", "import"],
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "react-native/no-color-literals": "off",
+    "react-native/sort-styles": "off",
+    "react-native/no-raw-text": "off",
+    "react/prop-types": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-filename-extension": ["error", { "extensions": [".tsx", ".jsx", ".js"] }],
+    "react/jsx-first-prop-new-line": [1, "never"],
+    "react/jsx-max-props-per-line": [1, { "maximum": 1 }],
+    "react/jsx-indent-props": [1, "first"],
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "no-unused-expressions": ["error", { "allowTaggedTemplates": true }],
+    "no-use-before-define": "off",
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "spaced-comment": ["error", "always", { "markers": ["/"] }],
+    "global-require": "off"
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {},
+      "babel-plugin-root-import": { "rootPathSuffix": "src" }
+    }
+  }
+}
