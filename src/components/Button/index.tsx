@@ -43,6 +43,7 @@ const Button = ({
   <StyledTouchable backgroundColor={backgroundColor}
                    round={round}
                    onPress={onPress}
+                   testID="click-me"
   >
     <StyledText color={color}>
       {text}

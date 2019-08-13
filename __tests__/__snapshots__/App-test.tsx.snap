@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should click three times 1`] = `
+<Text
+  style={
+    Object {
+      "color": "white",
+      "fontSize": 12,
+    }
+  }
+>
+  You clicked 
+  3
+   times
+</Text>
+`;
