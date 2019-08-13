@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
   View,
   Text,
   StyleSheet,
+  StatusBar,
 } from 'react-native';
 
 import { Button } from '~/components';
@@ -31,20 +32,27 @@ const styles = StyleSheet.create({
   },
 });
 
-const App = () => (
-  <View style={styles.container}>
-    <View style={styles.textWrapper}>
-      <Text style={styles.title}>
+StatusBar.setBarStyle('light-content');
+
+const App = () => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.textWrapper}>
+        <Text style={styles.title}>
         qa-tools-app
-      </Text>
-      <Text style={styles.subtitle}>
-        testing some tools
-      </Text>
+        </Text>
+        <Text style={styles.subtitle}>
+        You clicked {count} times
+        </Text>
+      </View>
+      <Button round
+              text="Click me"
+              onPress={() => setCount(count + 1)}
+      />
     </View>
-    <Button round
-            text="Click me"
-    />
-  </View>
-);
+  );
+};
 
 export default App;

@@ -5,6 +5,7 @@ import styled from 'styled-components/native';
 interface TouchableProps {
   backgroundColor?: string,
   round?: boolean,
+  onPress?: () => void
 }
 
 interface TextProps {
@@ -37,9 +38,11 @@ const Button = ({
   color,
   round,
   text,
+  onPress,
 }: Props) => (
   <StyledTouchable backgroundColor={backgroundColor}
                    round={round}
+                   onPress={onPress}
   >
     <StyledText color={color}>
       {text}
