@@ -1,0 +1,160 @@
+06c5afb597311385559e70f28cfd80c6
+
+
+
+
+
+
+
+
+
+
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var observers = new Set();
+var ignorePatterns = new Set();
+var registry = new Map();
+
+var disabled = false;
+var projection = new Map();
+var updateTimeout = null;
+
+function isWarningIgnored(warning) {
+  for (var _iterator = ignorePatterns, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[typeof Symbol === "function" ? Symbol.iterator : "@@iterator"]();;) {var _ref;if (_isArray) {if (_i >= _iterator.length) break;_ref = _iterator[_i++];} else {_i = _iterator.next();if (_i.done) break;_ref = _i.value;}var _pattern = _ref;
+    if (_pattern instanceof RegExp && _pattern.test(warning.message.content)) {
+      return true;
+    } else if (
+    typeof _pattern === 'string' &&
+    warning.message.content.includes(_pattern))
+    {
+      return true;
+    }
+  }
+  return false;
+}
+
+function handleUpdate() {
+  projection = new Map();
+  if (!disabled) {
+    for (var _iterator2 = registry, _isArray2 = Array.isArray(_iterator2), _i2 = 0, _iterator2 = _isArray2 ? _iterator2 : _iterator2[typeof Symbol === "function" ? Symbol.iterator : "@@iterator"]();;) {var _ref4;if (_isArray2) {if (_i2 >= _iterator2.length) break;_ref4 = _iterator2[_i2++];} else {_i2 = _iterator2.next();if (_i2.done) break;_ref4 = _i2.value;}var _ref5 = _ref4;var _ref3 = require("@babel/runtime/helpers/slicedToArray")(_ref5, 2);var _category = _ref3[0];var _warnings = _ref3[1];
+      var filtered = _warnings.filter(function (warning) {return !isWarningIgnored(warning);});
+      if (filtered.length > 0) {
+        projection.set(_category, filtered);
+      }
+    }
+  }
+  if (updateTimeout == null) {
+    updateTimeout = setImmediate(function () {
+      updateTimeout = null;
+      for (var _iterator3 = observers, _isArray3 = Array.isArray(_iterator3), _i3 = 0, _iterator3 = _isArray3 ? _iterator3 : _iterator3[typeof Symbol === "function" ? Symbol.iterator : "@@iterator"]();;) {var _ref7;if (_isArray3) {if (_i3 >= _iterator3.length) break;_ref7 = _iterator3[_i3++];} else {_i3 = _iterator3.next();if (_i3.done) break;_ref7 = _i3.value;}var _ref8 = _ref7;var _observer = _ref8.observer;
+        _observer(projection);
+      }
+    });
+  }
+}
+
+var YellowBoxRegistry = {
+  add: function add(_ref9)
+
+
+
+
+
+  {var args = _ref9.args,framesToPop = _ref9.framesToPop;
+    if (typeof args[0] === 'string' && args[0].startsWith('(ADVICE)')) {
+      return;
+    }var _YellowBoxWarning$par =
+    require('./YellowBoxWarning').parse({
+      args: args,
+      framesToPop: framesToPop + 1 }),category = _YellowBoxWarning$par.category,message = _YellowBoxWarning$par.message,stack = _YellowBoxWarning$par.stack;
+
+
+    var warnings = registry.get(category);
+    if (warnings == null) {
+      warnings = [];
+    }
+    warnings = [].concat(require("@babel/runtime/helpers/toConsumableArray")(warnings), [new (require('./YellowBoxWarning'))(message, stack)]);
+
+    registry.delete(category);
+    registry.set(category, warnings);
+
+    handleUpdate();
+  },
+
+  delete: function _delete(category) {
+    if (registry.has(category)) {
+      registry.delete(category);
+      handleUpdate();
+    }
+  },
+
+  clear: function clear() {
+    if (registry.size > 0) {
+      registry.clear();
+      handleUpdate();
+    }
+  },
+
+  addIgnorePatterns: function addIgnorePatterns(patterns) {
+    var newPatterns = patterns.filter(function (pattern) {
+      if (pattern instanceof RegExp) {
+        for (var _iterator4 = ignorePatterns.entries(), _isArray4 = Array.isArray(_iterator4), _i4 = 0, _iterator4 = _isArray4 ? _iterator4 : _iterator4[typeof Symbol === "function" ? Symbol.iterator : "@@iterator"]();;) {var _ref10;if (_isArray4) {if (_i4 >= _iterator4.length) break;_ref10 = _iterator4[_i4++];} else {_i4 = _iterator4.next();if (_i4.done) break;_ref10 = _i4.value;}var _existingPattern = _ref10;
+          if (
+          _existingPattern instanceof RegExp &&
+          _existingPattern.toString() === pattern.toString())
+          {
+            return false;
+          }
+        }
+        return true;
+      }
+      return !ignorePatterns.has(pattern);
+    });
+    if (newPatterns.length === 0) {
+      return;
+    }
+    for (var _iterator5 = newPatterns, _isArray5 = Array.isArray(_iterator5), _i5 = 0, _iterator5 = _isArray5 ? _iterator5 : _iterator5[typeof Symbol === "function" ? Symbol.iterator : "@@iterator"]();;) {var _ref11;if (_isArray5) {if (_i5 >= _iterator5.length) break;_ref11 = _iterator5[_i5++];} else {_i5 = _iterator5.next();if (_i5.done) break;_ref11 = _i5.value;}var _pattern2 = _ref11;
+      ignorePatterns.add(_pattern2);
+    }
+    handleUpdate();
+  },
+
+  setDisabled: function setDisabled(value) {
+    if (value === disabled) {
+      return;
+    }
+    disabled = value;
+    handleUpdate();
+  },
+
+  isDisabled: function isDisabled() {
+    return disabled;
+  },
+
+  observe: function observe(observer) {
+    var subscription = { observer: observer };
+    observers.add(subscription);
+    observer(projection);
+    return {
+      unsubscribe: function unsubscribe() {
+        observers.delete(subscription);
+      } };
+
+  } };
+
+
+module.exports = YellowBoxRegistry;

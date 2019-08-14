@@ -1,0 +1,43 @@
+170cd8d5e99f7634c477bbb30ad6ea97
+
+
+
+
+
+
+
+
+
+
+'use strict';var _jsxFileName = "/Users/feracode/Repos/qa-tools/qa-tools-app/node_modules/react-native/Libraries/Components/View/View.js";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var ViewToExport = require('./ViewNativeComponent');
+if (__DEV__) {
+  if (!global.__RCTProfileIsProfiling) {
+    var View = function View(
+    props,
+    forwardedRef)
+    {
+      return require('react').createElement(require('./ViewNativeComponent'), require("@babel/runtime/helpers/extends")({}, props, { ref: forwardedRef, __source: { fileName: _jsxFileName, lineNumber: 35 } }));
+    };
+    ViewToExport = require('react').forwardRef(View);
+    ViewToExport.displayName = 'View';
+  }
+}
+
+module.exports = ViewToExport;

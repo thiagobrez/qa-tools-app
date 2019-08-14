@@ -1,0 +1,161 @@
+eb9ef52c62e17139dcf564bf10914a18
+
+
+
+
+
+
+
+
+
+
+'use strict';var _jsxFileName = "/Users/feracode/Repos/qa-tools/qa-tools-app/node_modules/react-native/Libraries/YellowBox/YellowBox.js";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var YellowBox;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if (__DEV__) {var _temp;
+  var Platform = require('../Utilities/Platform');
+  var RCTLog = require('../Utilities/RCTLog');
+  var YellowBoxList = require('./UI/YellowBoxList');
+  var YellowBoxRegistry = require('./Data/YellowBoxRegistry');var _console =
+
+  console,error = _console.error,warn = _console.warn;
+
+
+  YellowBox = (_temp = function (_React$Component) {require("@babel/runtime/helpers/inherits")(YellowBox, _React$Component);function YellowBox() {var _getPrototypeOf2;var _this;require("@babel/runtime/helpers/classCallCheck")(this, YellowBox);for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = require("@babel/runtime/helpers/possibleConstructorReturn")(this, (_getPrototypeOf2 = require("@babel/runtime/helpers/getPrototypeOf")(YellowBox)).call.apply(_getPrototypeOf2, [this].concat(args)));_this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      state = {
+        registry: null };_this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      _handleDismiss = function (category) {
+        YellowBoxRegistry.delete(category);
+      };return _this;}require("@babel/runtime/helpers/createClass")(YellowBox, [{ key: "render", value: function render() {return this.state.registry == null ? null : require('react').createElement(YellowBoxList, { onDismiss: this._handleDismiss, onDismissAll: this._handleDismissAll, registry: this.state.registry, __source: { fileName: _jsxFileName, lineNumber: 108 } });} }, { key: "componentDidMount", value: function componentDidMount() {var _this2 = this;this._subscription = YellowBoxRegistry.observe(function (registry) {_this2.setState({ registry: registry });});} }, { key: "componentWillUnmount", value: function componentWillUnmount() {if (this._subscription != null) {this._subscription.unsubscribe();}} }, { key: "_handleDismissAll", value: function _handleDismissAll()
+
+      {
+        YellowBoxRegistry.clear();
+      } }], [{ key: "ignoreWarnings", value: function ignoreWarnings(patterns) {YellowBoxRegistry.addIgnorePatterns(patterns);} }, { key: "install", value: function install() {console.error = function () {for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {args[_key2] = arguments[_key2];}error.call.apply(error, [console].concat(args));if (typeof args[0] === 'string' && args[0].startsWith('Warning: ')) {registerWarning.apply(void 0, args);}};console.warn = function () {for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {args[_key3] = arguments[_key3];}warn.call.apply(warn, [console].concat(args));registerWarning.apply(void 0, args);};if (console.disableYellowBox === true) {YellowBoxRegistry.setDisabled(true);}Object.defineProperty(console, 'disableYellowBox', { configurable: true, get: function get() {return YellowBoxRegistry.isDisabled();}, set: function set(value) {return YellowBoxRegistry.setDisabled(value);} });if (Platform.isTesting) {console.disableYellowBox = true;}RCTLog.setWarningHandler(function () {registerWarning.apply(void 0, arguments);});} }, { key: "uninstall", value: function uninstall() {console.error = error;console.warn = error;delete console.disableYellowBox;} }]);return YellowBox;}(require('react').Component), _temp);
+
+
+  var registerWarning = function registerWarning() {for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {args[_key4] = arguments[_key4];}
+    YellowBoxRegistry.add({ args: args, framesToPop: 2 });
+  };
+} else {
+  YellowBox = function (_React$Component2) {require("@babel/runtime/helpers/inherits")(YellowBox, _React$Component2);function YellowBox() {require("@babel/runtime/helpers/classCallCheck")(this, YellowBox);return require("@babel/runtime/helpers/possibleConstructorReturn")(this, require("@babel/runtime/helpers/getPrototypeOf")(YellowBox).apply(this, arguments));}require("@babel/runtime/helpers/createClass")(YellowBox, [{ key: "render", value: function render()
+
+
+
+
+
+
+
+
+
+
+
+
+      {
+        return null;
+      } }], [{ key: "ignoreWarnings", value: function ignoreWarnings(patterns) {} }, { key: "install", value: function install() {} }, { key: "uninstall", value: function uninstall() {} }]);return YellowBox;}(require('react').Component);
+
+}
+
+module.exports = YellowBox;

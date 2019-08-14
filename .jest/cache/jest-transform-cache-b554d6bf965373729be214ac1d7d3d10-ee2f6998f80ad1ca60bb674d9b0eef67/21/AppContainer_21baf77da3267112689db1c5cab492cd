@@ -1,0 +1,138 @@
+3b5b136b87f7b0fb7101b807e6b7d23d
+
+
+
+
+
+
+
+
+
+
+'use strict';var _jsxFileName = "/Users/feracode/Repos/qa-tools/qa-tools-app/node_modules/react-native/Libraries/ReactNative/AppContainer.js";var
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AppContainer = function (_React$Component) {require("@babel/runtime/helpers/inherits")(AppContainer, _React$Component);function AppContainer() {var _getPrototypeOf2;var _this;require("@babel/runtime/helpers/classCallCheck")(this, AppContainer);for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = require("@babel/runtime/helpers/possibleConstructorReturn")(this, (_getPrototypeOf2 = require("@babel/runtime/helpers/getPrototypeOf")(AppContainer)).call.apply(_getPrototypeOf2, [this].concat(args)));_this.
+    state = {
+      inspector: null,
+      mainKey: 1 };_this.
+
+
+    _subscription = null;return _this;}require("@babel/runtime/helpers/createClass")(AppContainer, [{ key: "getChildContext", value: function getChildContext()
+
+
+
+
+
+    {
+      return {
+        rootTag: this.props.rootTag };
+
+    } }, { key: "componentDidMount", value: function componentDidMount()
+
+    {var _this2 = this;
+      if (__DEV__) {
+        if (!global.__RCTProfileIsProfiling) {
+          this._subscription = require('../EventEmitter/RCTDeviceEventEmitter').addListener(
+          'toggleElementInspector',
+          function () {
+            var Inspector = require('../Inspector/Inspector');
+            var inspector = _this2.state.inspector ? null :
+            require('react').createElement(Inspector, {
+              inspectedViewTag: require('../Renderer/shims/ReactNative').findNodeHandle(_this2._mainRef),
+              onRequestRerenderApp: function onRequestRerenderApp(updateInspectedViewTag) {
+                _this2.setState(
+                function (s) {return { mainKey: s.mainKey + 1 };},
+                function () {return (
+                    updateInspectedViewTag(
+                    require('../Renderer/shims/ReactNative').findNodeHandle(_this2._mainRef)));});
+
+
+              }, __source: { fileName: _jsxFileName, lineNumber: 62 } });
+
+
+            _this2.setState({ inspector: inspector });
+          });
+
+        }
+      }
+    } }, { key: "componentWillUnmount", value: function componentWillUnmount()
+
+    {
+      if (this._subscription != null) {
+        this._subscription.remove();
+      }
+    } }, { key: "render", value: function render()
+
+    {var _this3 = this;
+      var yellowBox = null;
+      if (__DEV__) {
+        if (!global.__RCTProfileIsProfiling) {
+          var YellowBox = require('../YellowBox/YellowBox');
+          yellowBox = require('react').createElement(YellowBox, { __source: { fileName: _jsxFileName, lineNumber: 93 } });
+        }
+      }
+
+      var innerView =
+      require('react').createElement(require('../Components/View/View'), {
+        collapsable: !this.state.inspector,
+        key: this.state.mainKey,
+        pointerEvents: "box-none",
+        style: styles.appContainer,
+        ref: function ref(_ref) {
+          _this3._mainRef = _ref;
+        }, __source: { fileName: _jsxFileName, lineNumber: 98 } },
+      this.props.children);
+
+
+
+      var Wrapper = this.props.WrapperComponent;
+      if (Wrapper != null) {
+        innerView = require('react').createElement(Wrapper, { __source: { fileName: _jsxFileName, lineNumber: 112 } }, innerView);
+      }
+      return (
+        require('react').createElement(require('../Components/View/View'), { style: styles.appContainer, pointerEvents: "box-none", __source: { fileName: _jsxFileName, lineNumber: 115 } },
+        innerView,
+        yellowBox,
+        this.state.inspector));
+
+
+    } }]);return AppContainer;}(require('react').Component);AppContainer.childContextTypes = { rootTag: require('prop-types').number };
+
+
+var styles = require('../StyleSheet/StyleSheet').create({
+  appContainer: {
+    flex: 1 } });
+
+
+
+if (__DEV__) {
+  if (!global.__RCTProfileIsProfiling) {
+    var YellowBox = require('../YellowBox/YellowBox');
+    YellowBox.install();
+  }
+}
+
+module.exports = AppContainer;

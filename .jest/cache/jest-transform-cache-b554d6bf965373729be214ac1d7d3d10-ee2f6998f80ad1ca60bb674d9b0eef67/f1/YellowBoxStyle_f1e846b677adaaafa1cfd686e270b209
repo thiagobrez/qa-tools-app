@@ -1,0 +1,32 @@
+836d43e94f247c9b1a6ccd20ed18c887
+
+
+
+
+
+
+
+
+
+
+'use strict';
+
+var YellowBoxStyle = {
+  getBackgroundColor: function getBackgroundColor(opacity) {
+    return "rgba(250, 186, 48, " + opacity + ")";
+  },
+
+  getDividerColor: function getDividerColor(opacity) {
+    return "rgba(255, 255, 255, " + opacity + ")";
+  },
+
+  getHighlightColor: function getHighlightColor(opacity) {
+    return "rgba(252, 176, 29, " + opacity + ")";
+  },
+
+  getTextColor: function getTextColor(opacity) {
+    return "rgba(255, 255, 255, " + opacity + ")";
+  } };
+
+
+module.exports = YellowBoxStyle;

@@ -1,0 +1,101 @@
+4bf510c5aa8a4a47d63756096d9c8166
+
+
+
+
+
+
+
+
+
+
+'use strict';var _jsxFileName = "/Users/feracode/Repos/qa-tools/qa-tools-app/node_modules/react-native/Libraries/YellowBox/UI/YellowBoxListRow.js";var
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+YellowBoxListRow = function (_React$Component) {require("@babel/runtime/helpers/inherits")(YellowBoxListRow, _React$Component);function YellowBoxListRow() {var _getPrototypeOf2;var _this;require("@babel/runtime/helpers/classCallCheck")(this, YellowBoxListRow);for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = require("@babel/runtime/helpers/possibleConstructorReturn")(this, (_getPrototypeOf2 = require("@babel/runtime/helpers/getPrototypeOf")(YellowBoxListRow)).call.apply(_getPrototypeOf2, [this].concat(args)));_this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    _handlePress = function () {
+      _this.props.onPress(_this.props.category);
+    };return _this;}require("@babel/runtime/helpers/createClass")(YellowBoxListRow, [{ key: "shouldComponentUpdate", value: function shouldComponentUpdate(nextProps) {var prevProps = this.props;return prevProps.category !== nextProps.category || prevProps.onPress !== nextProps.onPress || prevProps.warnings.length !== nextProps.warnings.length || prevProps.warnings.some(function (prevWarning, index) {return prevWarning !== nextProps[index];});} }, { key: "render", value: function render() {var warnings = this.props.warnings;return require('react').createElement(require('./YellowBoxPressable'), { onPress: this._handlePress, style: styles.root, __source: { fileName: _jsxFileName, lineNumber: 50 } }, require('react').createElement(require('../../Components/View/View'), { style: styles.content, __source: { fileName: _jsxFileName, lineNumber: 51 } }, warnings.length < 2 ? null : require('react').createElement(require('../../Text/Text'), { style: styles.metaText, __source: { fileName: _jsxFileName, lineNumber: 53 } }, '(' + warnings.length + ') '), require('react').createElement(require('../../Text/Text'), { numberOfLines: 2, style: styles.bodyText, __source: { fileName: _jsxFileName, lineNumber: 55 } }, require('../Data/YellowBoxCategory').render(warnings[warnings.length - 1].message, styles.substitutionText))));} }]);return YellowBoxListRow;}(require('react').Component);YellowBoxListRow.GUTTER = require('../../StyleSheet/StyleSheet').hairlineWidth;YellowBoxListRow.HEIGHT = 48;
+
+
+var styles = require('../../StyleSheet/StyleSheet').create({
+  root: {
+    height: YellowBoxListRow.HEIGHT,
+    justifyContent: 'center',
+    marginTop: YellowBoxListRow.GUTTER,
+    paddingHorizontal: 12 },
+
+  content: {
+    alignItems: 'flex-start',
+    flexDirection: 'row' },
+
+  bodyText: {
+    color: require('./YellowBoxStyle').getTextColor(1),
+    flex: 1,
+    fontSize: 14,
+    includeFontPadding: false,
+    lineHeight: 18 },
+
+  metaText: {
+    color: require('./YellowBoxStyle').getTextColor(0.5),
+    fontSize: 14,
+    includeFontPadding: false,
+    lineHeight: 18 },
+
+  substitutionText: {
+    color: require('./YellowBoxStyle').getTextColor(0.6) } });
+
+
+
+module.exports = YellowBoxListRow;

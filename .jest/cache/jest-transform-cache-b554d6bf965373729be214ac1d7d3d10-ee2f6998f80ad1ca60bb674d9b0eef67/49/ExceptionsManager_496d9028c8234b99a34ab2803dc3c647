@@ -1,0 +1,136 @@
+c3a4379c02bc3e755f9dcc7c3f6d0eb6
+
+
+
+
+
+
+
+
+
+
+'use strict';
+
+
+
+var INTERNAL_CALLSITES_REGEX = new RegExp(
+[
+'/Libraries/Renderer/oss/ReactNativeRenderer-dev\\.js$',
+'/Libraries/BatchedBridge/MessageQueue\\.js$'].
+join('|'));
+
+
+
+
+
+var exceptionID = 0;
+function reportException(e, isFatal) {var _require =
+  require('../BatchedBridge/NativeModules'),ExceptionsManager = _require.ExceptionsManager;
+  if (ExceptionsManager) {
+    var parseErrorStack = require('./Devtools/parseErrorStack');
+    var stack = parseErrorStack(e);
+    var currentExceptionID = ++exceptionID;
+    var message =
+    e.jsEngine == null ? e.message : e.message + ", js engine: " + e.jsEngine;
+    if (isFatal) {
+      ExceptionsManager.reportFatalException(
+      message,
+      stack,
+      currentExceptionID);
+
+    } else {
+      ExceptionsManager.reportSoftException(message, stack, currentExceptionID);
+    }
+    if (__DEV__) {
+      var symbolicateStackTrace = require('./Devtools/symbolicateStackTrace');
+      symbolicateStackTrace(stack).
+      then(function (prettyStack) {
+        if (prettyStack) {
+          var stackWithoutInternalCallsites = prettyStack.filter(
+          function (frame) {return (
+              frame.file &&
+              frame.file.match(INTERNAL_CALLSITES_REGEX) === null);});
+
+          ExceptionsManager.updateExceptionMessage(
+          message,
+          stackWithoutInternalCallsites,
+          currentExceptionID);
+
+        } else {
+          throw new Error('The stack is null');
+        }
+      }).
+      catch(function (error) {return (
+          console.warn('Unable to symbolicate stack trace: ' + error.message));});
+
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+function handleException(e, isFatal) {
+
+
+
+
+  if (!e.message) {
+    e = new Error(e);
+  }
+  if (console._errorOriginal) {
+    console._errorOriginal(e.message);
+  } else {
+    console.error(e.message);
+  }
+  reportException(e, isFatal);
+}
+
+function reactConsoleErrorHandler() {
+  console._errorOriginal.apply(console, arguments);
+  if (!console.reportErrorsAsExceptions) {
+    return;
+  }
+
+  if (arguments[0] && arguments[0].stack) {
+    reportException(arguments[0], false);
+  } else {
+    var stringifySafe = require('../Utilities/stringifySafe');
+    var str = Array.prototype.map.call(arguments, stringifySafe).join(', ');
+    if (str.slice(0, 10) === '"Warning: ') {
+
+
+
+      return;
+    }
+    var error = new Error('console.error: ' + str);
+    error.framesToPop = 1;
+    reportException(error, false);
+  }
+}
+
+
+
+
+
+function installConsoleErrorReporter() {
+
+  if (console._errorOriginal) {
+    return;
+  }
+
+  console._errorOriginal = console.error.bind(console);
+  console.error = reactConsoleErrorHandler;
+  if (console.reportErrorsAsExceptions === undefined) {
+
+
+    console.reportErrorsAsExceptions = true;
+  }
+}
+
+module.exports = { handleException: handleException, installConsoleErrorReporter: installConsoleErrorReporter };

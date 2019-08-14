@@ -2,7 +2,8 @@
   "parser": "babel-eslint",
   "env": {
     "es6": true,
-    "jest": true
+    "jest": true,
+    "detox/detox": true
   },
   "extends": [
     "airbnb",
@@ -22,7 +23,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "react-native", "jsx-a11y", "import"],
+  "plugins": ["react", "react-native", "jsx-a11y", "import", "detox"],
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-member-accessibility": "off",
