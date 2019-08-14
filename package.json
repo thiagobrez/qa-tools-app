@@ -9,6 +9,9 @@
     "detox:ios:debug": "detox test -c ios.sim.debug"
   },
   "dependencies": {
+    "appcenter": "2.2.0",
+    "appcenter-analytics": "2.2.0",
+    "appcenter-crashes": "2.2.0",
     "react": "16.8.6",
     "react-native": "0.60.4",
     "styled-components": "^4.3.2"
