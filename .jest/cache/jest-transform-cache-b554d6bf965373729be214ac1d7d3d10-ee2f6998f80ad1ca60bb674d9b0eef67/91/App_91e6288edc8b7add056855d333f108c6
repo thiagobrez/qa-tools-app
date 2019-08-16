@@ -1,0 +1,740 @@
+e8261614c2b0234f99f5a0299232c115
+"use strict";
+
+/* istanbul ignore next */
+var cov_1j2qcbhrde = function () {
+  var path = "/Users/feracode/Repos/qa-tools/qa-tools-app/App.tsx";
+  var hash = "56791ef6a898baba4151c8d966dfdc92b154765f";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/feracode/Repos/qa-tools/qa-tools-app/App.tsx",
+    statementMap: {
+      "0": {
+        start: {
+          line: 3,
+          column: 29
+        },
+        end: {
+          line: 3,
+          column: 84
+        }
+      },
+      "1": {
+        start: {
+          line: 5,
+          column: 22
+        },
+        end: {
+          line: 5,
+          column: 93
+        }
+      },
+      "2": {
+        start: {
+          line: 7,
+          column: 19
+        },
+        end: {
+          line: 15,
+          column: 1
+        }
+      },
+      "3": {
+        start: {
+          line: 8,
+          column: 2
+        },
+        end: {
+          line: 8,
+          column: 40
+        }
+      },
+      "4": {
+        start: {
+          line: 8,
+          column: 29
+        },
+        end: {
+          line: 8,
+          column: 40
+        }
+      },
+      "5": {
+        start: {
+          line: 9,
+          column: 15
+        },
+        end: {
+          line: 9,
+          column: 17
+        }
+      },
+      "6": {
+        start: {
+          line: 10,
+          column: 2
+        },
+        end: {
+          line: 12,
+          column: 3
+        }
+      },
+      "7": {
+        start: {
+          line: 10,
+          column: 19
+        },
+        end: {
+          line: 12,
+          column: 3
+        }
+      },
+      "8": {
+        start: {
+          line: 11,
+          column: 4
+        },
+        end: {
+          line: 11,
+          column: 63
+        }
+      },
+      "9": {
+        start: {
+          line: 11,
+          column: 44
+        },
+        end: {
+          line: 11,
+          column: 63
+        }
+      },
+      "10": {
+        start: {
+          line: 13,
+          column: 2
+        },
+        end: {
+          line: 13,
+          column: 26
+        }
+      },
+      "11": {
+        start: {
+          line: 14,
+          column: 2
+        },
+        end: {
+          line: 14,
+          column: 16
+        }
+      },
+      "12": {
+        start: {
+          line: 17,
+          column: 0
+        },
+        end: {
+          line: 19,
+          column: 3
+        }
+      },
+      "13": {
+        start: {
+          line: 21,
+          column: 14
+        },
+        end: {
+          line: 21,
+          column: 44
+        }
+      },
+      "14": {
+        start: {
+          line: 23,
+          column: 21
+        },
+        end: {
+          line: 23,
+          column: 44
+        }
+      },
+      "15": {
+        start: {
+          line: 25,
+          column: 19
+        },
+        end: {
+          line: 25,
+          column: 46
+        }
+      },
+      "16": {
+        start: {
+          line: 27,
+          column: 13
+        },
+        end: {
+          line: 48,
+          column: 2
+        }
+      },
+      "17": {
+        start: {
+          line: 49,
+          column: 0
+        },
+        end: {
+          line: 49,
+          column: 54
+        }
+      },
+      "18": {
+        start: {
+          line: 51,
+          column: 10
+        },
+        end: {
+          line: 72,
+          column: 1
+        }
+      },
+      "19": {
+        start: {
+          line: 52,
+          column: 26
+        },
+        end: {
+          line: 52,
+          column: 45
+        }
+      },
+      "20": {
+        start: {
+          line: 53,
+          column: 27
+        },
+        end: {
+          line: 53,
+          column: 77
+        }
+      },
+      "21": {
+        start: {
+          line: 54,
+          column: 14
+        },
+        end: {
+          line: 54,
+          column: 35
+        }
+      },
+      "22": {
+        start: {
+          line: 55,
+          column: 17
+        },
+        end: {
+          line: 55,
+          column: 38
+        }
+      },
+      "23": {
+        start: {
+          line: 57,
+          column: 2
+        },
+        end: {
+          line: 71,
+          column: 6
+        }
+      },
+      "24": {
+        start: {
+          line: 69,
+          column: 6
+        },
+        end: {
+          line: 69,
+          column: 33
+        }
+      },
+      "25": {
+        start: {
+          line: 74,
+          column: 0
+        },
+        end: {
+          line: 74,
+          column: 22
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 7,
+            column: 48
+          },
+          end: {
+            line: 7,
+            column: 49
+          }
+        },
+        loc: {
+          start: {
+            line: 7,
+            column: 63
+          },
+          end: {
+            line: 15,
+            column: 1
+          }
+        },
+        line: 7
+      },
+      "1": {
+        name: "App",
+        decl: {
+          start: {
+            line: 51,
+            column: 19
+          },
+          end: {
+            line: 51,
+            column: 22
+          }
+        },
+        loc: {
+          start: {
+            line: 51,
+            column: 25
+          },
+          end: {
+            line: 72,
+            column: 1
+          }
+        },
+        line: 51
+      },
+      "2": {
+        name: "onPress",
+        decl: {
+          start: {
+            line: 68,
+            column: 22
+          },
+          end: {
+            line: 68,
+            column: 29
+          }
+        },
+        loc: {
+          start: {
+            line: 68,
+            column: 32
+          },
+          end: {
+            line: 70,
+            column: 5
+          }
+        },
+        line: 68
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 7,
+            column: 19
+          },
+          end: {
+            line: 15,
+            column: 1
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 7,
+            column: 19
+          },
+          end: {
+            line: 7,
+            column: 23
+          }
+        }, {
+          start: {
+            line: 7,
+            column: 27
+          },
+          end: {
+            line: 7,
+            column: 44
+          }
+        }, {
+          start: {
+            line: 7,
+            column: 48
+          },
+          end: {
+            line: 15,
+            column: 1
+          }
+        }],
+        line: 7
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 8,
+            column: 2
+          },
+          end: {
+            line: 8,
+            column: 40
+          }
+        },
+        type: "if",
+        locations: [{
+          start: {
+            line: 8,
+            column: 2
+          },
+          end: {
+            line: 8,
+            column: 40
+          }
+        }, {
+          start: {
+            line: 8,
+            column: 2
+          },
+          end: {
+            line: 8,
+            column: 40
+          }
+        }],
+        line: 8
+      },
+      "2": {
+        loc: {
+          start: {
+            line: 8,
+            column: 6
+          },
+          end: {
+            line: 8,
+            column: 27
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 8,
+            column: 6
+          },
+          end: {
+            line: 8,
+            column: 9
+          }
+        }, {
+          start: {
+            line: 8,
+            column: 13
+          },
+          end: {
+            line: 8,
+            column: 27
+          }
+        }],
+        line: 8
+      },
+      "3": {
+        loc: {
+          start: {
+            line: 10,
+            column: 2
+          },
+          end: {
+            line: 12,
+            column: 3
+          }
+        },
+        type: "if",
+        locations: [{
+          start: {
+            line: 10,
+            column: 2
+          },
+          end: {
+            line: 12,
+            column: 3
+          }
+        }, {
+          start: {
+            line: 10,
+            column: 2
+          },
+          end: {
+            line: 12,
+            column: 3
+          }
+        }],
+        line: 10
+      },
+      "4": {
+        loc: {
+          start: {
+            line: 11,
+            column: 4
+          },
+          end: {
+            line: 11,
+            column: 63
+          }
+        },
+        type: "if",
+        locations: [{
+          start: {
+            line: 11,
+            column: 4
+          },
+          end: {
+            line: 11,
+            column: 63
+          }
+        }, {
+          start: {
+            line: 11,
+            column: 4
+          },
+          end: {
+            line: 11,
+            column: 63
+          }
+        }],
+        line: 11
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0,
+      "24": 0,
+      "25": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0,
+      "2": 0
+    },
+    b: {
+      "0": [0, 0, 0],
+      "1": [0, 0],
+      "2": [0, 0],
+      "3": [0, 0],
+      "4": [0, 0]
+    },
+    _coverageSchema: "43e27e138ebf9cfc5966b082cf9a028302ed4184",
+    hash: "56791ef6a898baba4151c8d966dfdc92b154765f"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  return coverage[path] = coverageData;
+}();
+
+var _interopRequireDefault =
+/* istanbul ignore next */
+(cov_1j2qcbhrde.s[0]++, require("@babel/runtime/helpers/interopRequireDefault"));
+
+var _slicedToArray2 =
+/* istanbul ignore next */
+(cov_1j2qcbhrde.s[1]++, _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray")));
+
+var __importStar =
+/* istanbul ignore next */
+(cov_1j2qcbhrde.s[2]++,
+/* istanbul ignore next */
+(cov_1j2qcbhrde.b[0][0]++, this) &&
+/* istanbul ignore next */
+(cov_1j2qcbhrde.b[0][1]++, this.__importStar) ||
+/* istanbul ignore next */
+(cov_1j2qcbhrde.b[0][2]++, function (mod) {
+  /* istanbul ignore next */
+  cov_1j2qcbhrde.f[0]++;
+  cov_1j2qcbhrde.s[3]++;
+
+  if (
+  /* istanbul ignore next */
+  (cov_1j2qcbhrde.b[2][0]++, mod) &&
+  /* istanbul ignore next */
+  (cov_1j2qcbhrde.b[2][1]++, mod.__esModule)) {
+    /* istanbul ignore next */
+    cov_1j2qcbhrde.b[1][0]++;
+    cov_1j2qcbhrde.s[4]++;
+    return mod;
+  } else
+  /* istanbul ignore next */
+  {
+    cov_1j2qcbhrde.b[1][1]++;
+  }
+
+  var result =
+  /* istanbul ignore next */
+  (cov_1j2qcbhrde.s[5]++, {});
+
+  /* istanbul ignore next */
+  cov_1j2qcbhrde.s[6]++;
+
+  if (mod != null) {
+    /* istanbul ignore next */
+    cov_1j2qcbhrde.b[3][0]++;
+    cov_1j2qcbhrde.s[7]++;
+
+    for (var k in mod) {
+      /* istanbul ignore next */
+      cov_1j2qcbhrde.s[8]++;
+
+      if (Object.hasOwnProperty.call(mod, k)) {
+        /* istanbul ignore next */
+        cov_1j2qcbhrde.b[4][0]++;
+        cov_1j2qcbhrde.s[9]++;
+        result[k] = mod[k];
+      } else
+      /* istanbul ignore next */
+      {
+        cov_1j2qcbhrde.b[4][1]++;
+      }
+    }
+  } else
+  /* istanbul ignore next */
+  {
+    cov_1j2qcbhrde.b[3][1]++;
+  }
+
+  cov_1j2qcbhrde.s[10]++;
+  result["default"] = mod;
+
+  /* istanbul ignore next */
+  cov_1j2qcbhrde.s[11]++;
+  return result;
+}));
+
+/* istanbul ignore next */
+cov_1j2qcbhrde.s[12]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var react_1 =
+/* istanbul ignore next */
+(cov_1j2qcbhrde.s[13]++, __importStar(require("react")));
+var react_native_1 =
+/* istanbul ignore next */
+(cov_1j2qcbhrde.s[14]++, require("react-native"));
+var components_1 =
+/* istanbul ignore next */
+(cov_1j2qcbhrde.s[15]++, require("./src/components"));
+var styles =
+/* istanbul ignore next */
+(cov_1j2qcbhrde.s[16]++, react_native_1.StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'darkblue'
+  },
+  textWrapper: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 20
+  },
+  title: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 30
+  },
+  subtitle: {
+    color: 'white',
+    fontSize: 12
+  }
+}));
+
+/* istanbul ignore next */
+cov_1j2qcbhrde.s[17]++;
+react_native_1.StatusBar.setBarStyle('light-content');
+
+/* istanbul ignore next */
+cov_1j2qcbhrde.s[18]++;
+
+var App = function App() {
+  /* istanbul ignore next */
+  cov_1j2qcbhrde.f[1]++;
+
+  var _react_1$useState =
+  /* istanbul ignore next */
+  (cov_1j2qcbhrde.s[19]++, react_1.useState(0)),
+      _react_1$useState2 =
+  /* istanbul ignore next */
+  (cov_1j2qcbhrde.s[20]++, (0, _slicedToArray2.default)(_react_1$useState, 2)),
+      count =
+  /* istanbul ignore next */
+  (cov_1j2qcbhrde.s[21]++, _react_1$useState2[0]),
+      setCount =
+  /* istanbul ignore next */
+  (cov_1j2qcbhrde.s[22]++, _react_1$useState2[1]);
+
+  /* istanbul ignore next */
+  cov_1j2qcbhrde.s[23]++;
+  return react_1.default.createElement(react_native_1.View, {
+    style: styles.container
+  }, react_1.default.createElement(react_native_1.View, {
+    style: styles.textWrapper
+  }, react_1.default.createElement(react_native_1.Text, {
+    style: styles.title
+  }, "qa-tools-app"), react_1.default.createElement(react_native_1.Text, {
+    style: styles.subtitle
+  }, "You clicked ", count, " times")), react_1.default.createElement(components_1.Button, {
+    round: true,
+    text: "Click me",
+    onPress: function onPress() {
+      /* istanbul ignore next */
+      cov_1j2qcbhrde.f[2]++;
+      cov_1j2qcbhrde.s[24]++;
+      return setCount(count + 1);
+    }
+  }));
+};
+
+/* istanbul ignore next */
+cov_1j2qcbhrde.s[25]++;
+exports.default = App;

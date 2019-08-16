@@ -1,0 +1,51 @@
+58598a838dc6ae6ad49bee13faa9abde
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+require("react-native");
+
+var react_1 = __importDefault(require("react"));
+
+var react_native_1 = require("@testing-library/react-native");
+
+var App_1 = __importDefault(require("../App"));
+
+it('renders correctly', function () {
+  react_native_1.render(react_1.default.createElement(App_1.default, null));
+});
+it('should click three times', function _callee() {
+  var _react_native_1$rende, getByTestId, getByText, button, expectedValue;
+
+  return _regenerator.default.async(function _callee$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          _react_native_1$rende = react_native_1.render(react_1.default.createElement(App_1.default, null)), getByTestId = _react_native_1$rende.getByTestId, getByText = _react_native_1$rende.getByText;
+          button = getByTestId('click-me');
+          expectedValue = 'You clicked 3 times';
+          react_native_1.fireEvent.press(button);
+          react_native_1.fireEvent.press(button);
+          react_native_1.fireEvent.press(button);
+          expect(getByText(expectedValue)).toMatchSnapshot();
+
+        case 7:
+        case "end":
+          return _context.stop();
+      }
+    }
+  });
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9mZXJhY29kZS9SZXBvcy9xYS10b29scy9xYS10b29scy1hcHAvX190ZXN0c19fL0FwcC10ZXN0LnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsT0FBQSxDQUFBLGNBQUEsQ0FBQTs7QUFDQSxJQUFBLE9BQUEsR0FBQSxlQUFBLENBQUEsT0FBQSxDQUFBLE9BQUEsQ0FBQSxDQUFBOztBQUNBLElBQUEsY0FBQSxHQUFBLE9BQUEsQ0FBQSwrQkFBQSxDQUFBOztBQUdBLElBQUEsS0FBQSxHQUFBLGVBQUEsQ0FBQSxPQUFBLENBQUEsUUFBQSxDQUFBLENBQUE7O0FBRUEsRUFBRSxDQUFDLG1CQUFELEVBQXNCLFlBQUs7QUFDM0IsRUFBQSxjQUFBLENBQUEsTUFBQSxDQUFPLE9BQUEsQ0FBQSxPQUFBLENBQUEsYUFBQSxDQUFDLEtBQUEsQ0FBQSxPQUFELEVBQUksSUFBSixDQUFQO0FBQ0QsQ0FGQyxDQUFGO0FBSUEsRUFBRSxDQUFDLDBCQUFELEVBQTZCO0FBQUE7O0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxrQ0FDTSxjQUFBLENBQUEsTUFBQSxDQUFPLE9BQUEsQ0FBQSxPQUFBLENBQUEsYUFBQSxDQUFDLEtBQUEsQ0FBQSxPQUFELEVBQUksSUFBSixDQUFQLENBRE4sRUFDckIsV0FEcUIseUJBQ3JCLFdBRHFCLEVBQ1IsU0FEUSx5QkFDUixTQURRO0FBR3ZCLFVBQUEsTUFIdUIsR0FHZCxXQUFXLENBQUMsVUFBRCxDQUhHO0FBSXZCLFVBQUEsYUFKdUIsR0FJUCxxQkFKTztBQU03QixVQUFBLGNBQUEsQ0FBQSxTQUFBLENBQVUsS0FBVixDQUFnQixNQUFoQjtBQUNBLFVBQUEsY0FBQSxDQUFBLFNBQUEsQ0FBVSxLQUFWLENBQWdCLE1BQWhCO0FBQ0EsVUFBQSxjQUFBLENBQUEsU0FBQSxDQUFVLEtBQVYsQ0FBZ0IsTUFBaEI7QUFFQSxVQUFBLE1BQU0sQ0FBQyxTQUFTLENBQUMsYUFBRCxDQUFWLENBQU4sQ0FBaUMsZUFBakM7O0FBVjZCO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLENBQTdCLENBQUYiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgJ3JlYWN0LW5hdGl2ZSc7XG5pbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgcmVuZGVyLCBmaXJlRXZlbnQgfSBmcm9tICdAdGVzdGluZy1saWJyYXJ5L3JlYWN0LW5hdGl2ZSc7XG5cbi8vIGVzbGludC1kaXNhYmxlLW5leHQtbGluZSBpbXBvcnQvbm8tdW5yZXNvbHZlZFxuaW1wb3J0IEFwcCBmcm9tICcuLi9BcHAnO1xuXG5pdCgncmVuZGVycyBjb3JyZWN0bHknLCAoKSA9PiB7XG4gIHJlbmRlcig8QXBwIC8+KTtcbn0pO1xuXG5pdCgnc2hvdWxkIGNsaWNrIHRocmVlIHRpbWVzJywgYXN5bmMgKCkgPT4ge1xuICBjb25zdCB7IGdldEJ5VGVzdElkLCBnZXRCeVRleHQgfSA9IHJlbmRlcig8QXBwIC8+KTtcblxuICBjb25zdCBidXR0b24gPSBnZXRCeVRlc3RJZCgnY2xpY2stbWUnKTtcbiAgY29uc3QgZXhwZWN0ZWRWYWx1ZSA9ICdZb3UgY2xpY2tlZCAzIHRpbWVzJztcblxuICBmaXJlRXZlbnQucHJlc3MoYnV0dG9uKTtcbiAgZmlyZUV2ZW50LnByZXNzKGJ1dHRvbik7XG4gIGZpcmVFdmVudC5wcmVzcyhidXR0b24pO1xuXG4gIGV4cGVjdChnZXRCeVRleHQoZXhwZWN0ZWRWYWx1ZSkpLnRvTWF0Y2hTbmFwc2hvdCgpO1xufSk7XG4iXX0=
