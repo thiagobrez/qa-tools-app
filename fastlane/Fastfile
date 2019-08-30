@@ -1,0 +1,25 @@
+platform :ios do
+  desc 'Fetch certificates and provisioning profiles'
+  lane :certificates do
+    match(app_identifier: 'com.feracode.qaToolsApp')
+  end
+
+  desc 'Fetch certificates. Build the iOS application.'
+  lane :build do
+    certificates
+    # increment_build_number(xcodeproj: './ios/qaToolsApp.xcodeproj')
+    gym(scheme: 'qaToolsApp', workspace: './ios/qaToolsApp.xcworkspace', export_method: 'development')
+  end
+
+  desc 'Fetch certificates, build and upload to App Center.'
+  lane :beta do
+    build
+    appcenter_upload(
+      api_token: ENV["TEST_APPCENTER_API_TOKEN"],
+      owner_name: ENV["TEST_APPCENTER_OWNER_NAME"],
+      app_name: ENV["APPCENTER_APP_NAME"],
+      ipa: ENV["APPCENTER_DISTRIBUTE_IPA"],
+      notify_testers: true
+    )
+  end
+end

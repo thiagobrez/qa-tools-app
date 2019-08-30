@@ -1,0 +1,8 @@
+git_url("git@github.com:thiagobrez/qaToolsApp-certs.git")
+
+storage_mode("git")
+
+type("development") # The default type, can be: appstore, adhoc, enterprise or development
+
+app_identifier("com.feracode.qaToolsApp")
+username("feracode@gmail.com") # Your Apple Developer Portal username
